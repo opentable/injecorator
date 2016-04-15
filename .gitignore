@@ -27,7 +27,7 @@ build/Release
 .DS_Store
 
 # ES6 build dir
-dist
+#dist
 
 # Dependency directory
 node_modules
