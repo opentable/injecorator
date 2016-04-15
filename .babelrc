@@ -1,0 +1,11 @@
+{
+  "presets": [
+    "node5"
+  ],
+  "plugins": [
+    "transform-decorators-legacy",
+    "transform-es2015-spread",
+    "transform-es2015-parameters"
+  ],
+  sourceMaps: "inline"
+}
