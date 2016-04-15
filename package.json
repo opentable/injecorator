@@ -1,6 +1,6 @@
 {
   "name": "injecorator",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "simple decorater based dependecy injection framework for nodejs es6 projects",
   "main": "./dist/injecorator.js",
   "scripts": {
@@ -9,7 +9,9 @@
     "build": "babel ./src -d dist",
     "test": "mocha --require babel-core/register ./src/test/**"
   },
-  "engines" : { "node" : ">=4.0.0" },
+  "engines": {
+    "node": ">=4.0.0"
+  },
   "author": "rickyaudsey@gmail.com",
   "contributors": [
     {
@@ -25,10 +27,16 @@
     "registry": "https://registry.npmjs.org"
   },
   "keywords": [
-    "IoC", "inversion of control",
-    "di", "dependency injection", "injection", "injector",
+    "IoC",
+    "inversion of control",
+    "di",
+    "dependency injection",
+    "injection",
+    "injector",
     "container",
-    "decorator",  "decorators",  "decorator pattern"
+    "decorator",
+    "decorators",
+    "decorator pattern"
   ],
   "license": "MIT",
   "bugs": {
@@ -52,6 +60,5 @@
     "mocha": "^2.4.5",
     "nyc": "^6.4.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
