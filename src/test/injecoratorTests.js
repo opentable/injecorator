@@ -15,6 +15,14 @@ class One
     }
 }
 
+class OneDerived extends One
+{
+    constructor(staticOb){
+        super(staticOb);
+        this.isDerivedOne = true;
+    }
+}
+
 @Inject(staticObject, One)
 class Two
 {
@@ -24,6 +32,15 @@ class Two
         this.isReallyTwo = true;
     }    
 }
+
+class Three
+{
+    constructor(two){
+        this.two = two;
+        this.isReallyThree = true;
+    }     
+}
+Three.$inject = [Two];
 
 describe('Injecorator default provider tests', () => {
     
@@ -43,6 +60,16 @@ describe('Injecorator default provider tests', () => {
         const two = ioc.get(Two);
         expect(two.one.isReallyOne).to.be.equal(false);
         
+        done();
+    });
+    
+    it('Should allow a factory method to be used as a value provider', (done) => {
+        const ioc = new IocContainer();
+        ioc.regAll(staticObject, Two, OneDerived);
+        ioc.register(One, (iocArg) => iocArg.get(OneDerived));
+        const two = ioc.get(Two);
+        expect(two.one.isReallyOne && two.one.isDerivedOne).to.be.equal(true);
+        expect(two.one.static).to.be.ok;
         done();
     });
     
@@ -80,6 +107,15 @@ describe('Injecorator default provider tests', () => {
         const ioc = new IocContainer();
         let one = ioc.get(One);
         expect(one).to.be.null;
+        
+        done();
+    });
+    
+    it('Should inject dependencies defined by static $type', (done) => {
+        const ioc = new IocContainer();
+        ioc.regAll(staticObject, One, Two, Three);
+        let three = ioc.get(Three);
+        expect(three.two).to.be.ok;
         
         done();
     });
