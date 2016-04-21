@@ -58,7 +58,7 @@ class Three
 Three.$inject = [Two];
 ```
 
-Registering an extension or replacement depency
+Registering an extension or replacement dependency
 ```javascript
 const ioc = new IocContainer();
 ioc.regAll(staticObject, Two);
