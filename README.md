@@ -1,7 +1,7 @@
 Injecorator
 ===================
 
-A simple decorater based dependecy injection framework for nodejs es6 projects
+A simple decorator based dependecy injection framework for nodejs es6 projects
 
 [![NPM version](https://badge.fury.io/js/injecorator.png)](http://badge.fury.io/js/injecorator)
 [![Build Status](https://travis-ci.org/opentable/injecorator.png?branch=master)](https://travis-ci.org/injecorator/spur-ioc)
